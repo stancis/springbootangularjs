@@ -1,0 +1,12 @@
+<div class="section">
+  <h3>{{headingTitle}}</h3>
+  <div>
+    <input type="search" ng-model="q" placeholder="filter users..." aria-label="filter users"/>
+    <ul class="example-animate-container" type="square">
+      <li class="animate-repeat" ng-repeat="user in users | filter:q | limitTo:3 as results">User: {{user}}</li>
+      <li class="animate-repeat" ng-if="results.length === 0">
+        <strong>No results found...</strong>
+      </li>
+    </ul>
+  </div>
+</div>
